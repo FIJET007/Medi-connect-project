@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 79, 107, 237;
+    --color-primary-light: 230, 235, 252;
+    --color-secondary: 76, 195, 195;
+    --color-secondary-light: 226, 245, 245;
+    --color-accent: 253, 165, 94;
+    --color-success: 34, 197, 94;
+    --color-warning: 245, 158, 11;
+    --color-error: 239, 68, 68;
+    --color-text: 30, 41, 59;
+    --color-bg: 249, 250, 251;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    line-height: 1.2;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+
+  a {
+    @apply text-primary hover:text-primary-dark transition-colors;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 
+    flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white hover:bg-primary-dark focus:ring-2 focus:ring-primary focus:ring-opacity-50;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary text-white hover:bg-secondary-dark focus:ring-2 focus:ring-secondary focus:ring-opacity-50;
+  }
+
+  .btn-outline {
+    @apply btn border border-gray-300 hover:bg-gray-50 focus:ring-2 focus:ring-gray-200;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2 rounded-lg border border-gray-300 
+    focus:ring-2 focus:ring-primary focus:border-primary focus:ring-opacity-40 
+    transition-all duration-200 placeholder:text-gray-400;
+  }
+
+  .form-label {
+    @apply block mb-2 font-medium text-gray-700;
+  }
+
+  .form-error {
+    @apply text-error text-sm mt-1;
+  }
+
+  .container-custom {
+    @apply px-4 mx-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl;
+  }
+}
